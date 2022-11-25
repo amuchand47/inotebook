@@ -1,11 +1,17 @@
-const mongoose  = require("mongoose")
-const mongoURI = "mongodb://localhost:27017"
+const mongoose = require("mongoose");
 
+// connect to localhost database
 
-const connectToMongo = () =>{
-    mongoose.connect(mongoURI, ()=>{
-        console.log("connected to mongodb succsessfully")
-    })
-}
+mongoose.connect("mongodb://localhost:27017/inotebook", {
+    useNewUrlParser:true,
+    useUnifiedTopology:true
 
-module.exports = connectToMongo;
+}).then(()=>{
+
+    console.log("Connected!!!");
+
+}).catch((e)=>{
+
+    console.log(e);
+
+});
