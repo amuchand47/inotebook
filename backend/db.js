@@ -4,7 +4,7 @@ const mongoURI = "mongodb://localhost:27017"
 
 const connectToMongo = () =>{
     mongoose.connect(mongoURI, ()=>{
-        console.log("connected to mongo succsessfully")
+        console.log("connected to mongodb succsessfully")
     })
 }
 
