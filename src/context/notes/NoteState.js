@@ -30,7 +30,25 @@ const NoteState = (props)=>{
           "tag": "Personal hai ye",
           "date": "2022-11-27T05:35:54.623Z",
           "__v": 0
-        }
+        },
+        {
+            "_id": "6382f73a65bb6970d2e7857d",
+            "user": "63818df2cea5a71302fcd497",
+            "title": "My title 3",
+            "description": "My description nahi hai",
+            "tag": "Personal hai ye",
+            "date": "2022-11-27T05:35:54.623Z",
+            "__v": 0
+          },
+          {
+            "_id": "6382f73a65bb6970d2e7857d",
+            "user": "63818df2cea5a71302fcd497",
+            "title": "My title 3",
+            "description": "My description nahi hai",
+            "tag": "Personal hai ye",
+            "date": "2022-11-27T05:35:54.623Z",
+            "__v": 0
+          }
     ];
 
     const [notes, setNotes] = useState(notesInitial);
