@@ -12,5 +12,5 @@ app.use('/api/notes', require("./routes/notes"))
 
 
 app.listen(port, () => {
-  console.log(`Running on port ${port}`)
+  console.log(`iNotebook Running on port ${port}`)
 })
