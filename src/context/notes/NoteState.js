@@ -58,6 +58,7 @@ const NoteState = (props)=>{
     const addNote=(title, description, tag)=>{
 
       // Todo API Call 
+
       console.log("Adding a note");
       
       const note = {
@@ -76,14 +77,18 @@ const NoteState = (props)=>{
 
     // Delete a note
 
-    const deleteNote=()=>{
+    const deleteNote=(id)=>{
+
+      console.log("Deleting a note "+ id);
+      const newNote = notes.filter((note)=>{return note._id!==id})
+      setNotes(newNote)
 
     }
 
 
     // Edit a note
 
-    const editNote=()=>{
+    const editNote=(id, title, description , tag)=>{
 
     }
 
