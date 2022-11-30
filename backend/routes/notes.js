@@ -17,7 +17,7 @@ router.get('/fetchallnotes', fetchuser, async(req, res)=>{
 })
 
 
-// ROUTE-2 Add a new note using : POST "/api/notes/allnote" . login required
+// ROUTE-2 Add a new note using : POST "/api/notes/addnote" . login required
 
 router.post('/addnote', fetchuser, [
 
@@ -40,6 +40,7 @@ router.post('/addnote', fetchuser, [
         // create a new note for a user 
 
         const note = new Note({title, description, tag, user : req.user.id});
+       // console.log(note)
         const savenotes = await note.save();
         res.json(savenotes);
 

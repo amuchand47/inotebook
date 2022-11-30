@@ -4,9 +4,10 @@ import React, { useContext, useState } from "react";
 export const AddNote = () => {
 
   const context = useContext(noteContext);
+
   const { addNote } = context;
 
-  const [note, setNote] = useState({ title: "", description: "", tag: "Def" });
+  const [note, setNote] = useState({ title: "", description: "", tag: "" });
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ export const AddNote = () => {
               type="text"
               className="form-control"
               id="title"
-              name="desc"
+              name="title"
               aria-describedby="emailHelp"
               onChange={onChange}
             />
@@ -48,6 +49,20 @@ export const AddNote = () => {
               onChange={onChange}
             />
           </div>
+
+          <div className="mb-3">
+            <label htmlFor="tag" className="form-label">
+              Tag
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="tag"
+              name="tag"
+              onChange={onChange}
+            />
+          </div>
+
           <button
             type="submit"
             className="btn btn-primary"
