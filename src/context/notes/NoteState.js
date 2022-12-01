@@ -29,7 +29,6 @@ const NoteState = (props)=>{
       });
 
       const json = await response.json();
-      console.log(json)
       setNotes(json)
 
     }
@@ -40,6 +39,7 @@ const NoteState = (props)=>{
 
       // API Call
 
+      //no-unused-vars
       const response = await fetch(`${host}api/notes/addnote`, {
 
         method: 'POST', 
@@ -54,7 +54,7 @@ const NoteState = (props)=>{
       });
     
 
-      console.log("Adding a note");
+      console.log("Adding a note ", response);
       
       const note = {
         "user": "63818df2cea5a71302fcd497",
@@ -88,7 +88,7 @@ const NoteState = (props)=>{
          
       });
     
-      const json = response.json();
+      const json = await response.json();
       console.log(json)
 
       console.log("Deleting a note "+ id);
@@ -106,7 +106,7 @@ const NoteState = (props)=>{
 
       const response = await fetch(`${host}api/notes/updatenote/${id}`, {
 
-        method: 'POST', 
+        method: 'PUT', 
         
         headers: {
           'Content-Type': 'application/json',
@@ -117,22 +117,29 @@ const NoteState = (props)=>{
         body: JSON.stringify({title, description, tag}) 
       });
     
+      
       const json = response.json();
 
+      console.log(json)
+      
       // logic to edit in client 
 
+      let newNotes = JSON.parse(JSON.stringify(notes));
 
       for(let index=0; index<notes.length; index++){
 
-        const element = notes[index];
+        const element = newNotes[index];
 
         if(element._id===id){
-          element.title = title;
-          element.description = description;
-          element.tag = tag;
+          newNotes[index].title = title;
+          newNotes[index].description = description;
+          newNotes[index].tag = tag;
+          break;
         }
 
       }
+
+      setNotes(newNotes)
 
     }
 
