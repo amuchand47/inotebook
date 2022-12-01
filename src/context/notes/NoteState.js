@@ -53,26 +53,17 @@ const NoteState = (props)=>{
         body: JSON.stringify({title, description, tag}) 
       });
     
+      const note = await response.json();
+      setNotes(notes.concat(note))
 
-      console.log("Adding a note ", response);
-      
-      const note = {
-        "user": "63818df2cea5a71302fcd497",
-        "title": title,
-        "description": description,
-        "tag": tag,
-        "date": "2022-11-27T05:35:54.623Z",
-        "__v": 0
-      };
-
-       setNotes(notes.concat(note))
-
+      console.log("Adding a note ", note);
+    
     }
 
 
     // Delete a note
 
-    const deleteNote=async(id)=>{
+    const deleteNote = async(id)=>{
 
       // API Call
 
@@ -118,9 +109,9 @@ const NoteState = (props)=>{
       });
     
       
-      const json = response.json();
+      const json = await response.json();
 
-      console.log(json)
+      //console.log(json)
       
       // logic to edit in client 
 
