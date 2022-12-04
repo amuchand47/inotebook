@@ -4,10 +4,14 @@ import { AddNote } from "./AddNote";
 import noteContext from "../context/notes/noteContext";
 
 const Notes = () => {
-
   const context = useContext(noteContext);
   const { notes, getNotes, editNote } = context;
-  const [note, setNote] = useState({ id:"",etitle: "", edescription: "", etag: "" });
+  const [note, setNote] = useState({
+    id: "",
+    etitle: "",
+    edescription: "",
+    etag: "",
+  });
 
   useEffect(() => {
     getNotes();
@@ -18,14 +22,18 @@ const Notes = () => {
 
   const updateNote = (currentNote) => {
     ref.current.click();
-    setNote({id:currentNote._id,etitle:currentNote.title, edescription:currentNote.description, etag:currentNote.tag})
+    setNote({
+      id: currentNote._id,
+      etitle: currentNote.title,
+      edescription: currentNote.description,
+      etag: currentNote.tag,
+    });
   };
 
   const handleClick = (e) => {
     refClose.current.click();
-    editNote(note.id, note.etitle, note.edescription, note.etag)
-    setNote({ id:"",etitle: "", edescription: "", etag: "" })
-    
+    editNote(note.id, note.etitle, note.edescription, note.etag);
+    setNote({ id: "", etitle: "", edescription: "", etag: "" });
   };
 
   const onChange = (e) => {
@@ -80,7 +88,8 @@ const Notes = () => {
                     value={note.etitle}
                     aria-describedby="emailHelp"
                     onChange={onChange}
-                    minLength={5} required
+                    minLength={5}
+                    required
                   />
                   <div id="emailHelp" className="form-text"></div>
                 </div>
@@ -95,7 +104,8 @@ const Notes = () => {
                     name="edescription"
                     value={note.edescription}
                     onChange={onChange}
-                    minLength={5} required
+                    minLength={5}
+                    required
                   />
                 </div>
 
@@ -115,18 +125,25 @@ const Notes = () => {
               </form>
             </div>
             <div className="modal-footer">
-              
-              <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal" >
+              <button
+                ref={refClose}
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
                 Close
               </button>
 
-              <button type="button" className="btn btn-primary" onClick={handleClick} 
-               
-               disabled = {note.etitle.length<5 || note.edescription.length<5}>
-
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handleClick}
+                disabled={
+                  note.etitle.length < 5 || note.edescription.length < 5
+                }
+              >
                 Update Note
               </button>
-
             </div>
           </div>
         </div>
@@ -135,7 +152,7 @@ const Notes = () => {
       <div className="row my-3">
         <h2>Your Notes</h2>
         <div className="container mx-4">
-          {notes.length===0 && 'No notes to display'}
+          {notes.length === 0 && "No notes to display"}
         </div>
         {notes.map((note) => {
           return (
