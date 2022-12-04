@@ -6,10 +6,13 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
 
   const [credentials, setCredentials] = useState({email:"", password:""})  ;
+  
   let navigate = useNavigate();
 
   const handleSubmit = async(e)=>{
+
     e.preventDefault();
+
     // API Call
 
     const response = await fetch("http://localhost:5000/api/auth/login", {
@@ -18,7 +21,7 @@ const Login = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({email:credentials.email, password:credentials.password}) 
-      });
+    });
 
       const json = await response.json();
       console.log(json)
@@ -37,7 +40,6 @@ const Login = () => {
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
-
 
   return (
     <div>
@@ -68,7 +70,7 @@ const Login = () => {
             name="password"
             id="password"
             value={credentials.password}
-              onChange={onChange} 
+            onChange={onChange} 
           />
         </div>
         <button type="submit" className="btn btn-primary" >
