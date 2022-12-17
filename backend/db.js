@@ -2,7 +2,15 @@ const mongoose = require("mongoose");
 
 // connect to localhost database
 
-mongoose.connect("mongodb://localhost:27017/inotebook", {
+// To connect with MongoDb clound Atlas , just replace 
+
+//const dbUrl = "// mongodb://localhost:27017/inotebook";
+
+const dbName = "inotebook";
+
+const dbUrl = `mongodb+srv://amuchand47:Chandcalifornia@cluster0.j3cxb4l.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+
+mongoose.connect(dbUrl, {
     useNewUrlParser:true,
     useUnifiedTopology:true
 

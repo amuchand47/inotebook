@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
 
@@ -24,7 +23,7 @@ const Login = (props) => {
     });
 
       const json = await response.json();
-      console.log(json)
+      //console.log(json)
 
       if(json.success){
         // Save the auth token and redirect
@@ -43,6 +42,7 @@ const Login = (props) => {
 
   return (
     <div className="container mt-2">
+
       <h2 className="my-2">Login to continue to iNoteBook</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -78,7 +78,17 @@ const Login = (props) => {
           Submit
         </button>
       </form>
+
+      <div className="container mt-4 center">
+  
+          <form className="d-flex ">
+            <Link className="btn btn-primary mx-1" role="button" to="/signup">Create New Account</Link>
+          </form>
+
+      </div>
     </div>
+
+    
   );
 };
 

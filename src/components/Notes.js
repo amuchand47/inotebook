@@ -9,6 +9,7 @@ const Notes = (props) => {
   let navigate = useNavigate();
   const context = useContext(noteContext);
   const { notes, getNotes, editNote } = context;
+  
   const [note, setNote] = useState({
     id: "",
     etitle: "",

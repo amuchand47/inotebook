@@ -63,7 +63,7 @@ router.post('/createuser', [
     res.json({success, authtoken}); 
 
     } catch (error) {
-       console.log(error.message)
+       //console.log(error.message)
        res.status(500).send("Internal server error occured")  
     }
 
@@ -123,7 +123,7 @@ router.post('/login', [
     res.json({success, authtoken}); 
 
     } catch (error) {
-       console.log(error.message)
+       //console.log(error.message)
        res.status(500).send("Internal server error occured")  
     }
 
@@ -141,7 +141,7 @@ try {
     res.send(user)
     
 } catch (error) {
-    console.log(error.message)
+    //console.log(error.message)
     res.status(500).send("Internal server error occured")  
 }
 })
