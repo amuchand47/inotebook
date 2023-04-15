@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv")
 
 // connect to localhost database
-
 // To connect with MongoDb clound Atlas , just replace 
+const dbUrl = "mongodb://localhost:27017/inotebook";
 
-//const dbUrl = "// mongodb://localhost:27017/inotebook";
 
-const dbName = "inotebook";
-
-const dbUrl = `mongodb+srv://amuchand47:Chandcalifornia@cluster0.j3cxb4l.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+// dotenv.config({path: './config.env'})
+// const dbUrl = process.env.DATABASE;
 
 mongoose.connect(dbUrl, {
     useNewUrlParser:true,
