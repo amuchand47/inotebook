@@ -44,13 +44,13 @@ const Login = (props) => {
     <div class="row">
       <div class="col">
        
-      <img src="https://github.com/amuchand47/inotebook/blob/main/public/images/signin.png" class="img-fluid" alt="..."/>
+      <img src="" class="img-fluid" alt="..."/>
  
       </div>
      
-      <div class="col">
-        <div className="container mt-2">
-          <h2 className="my-2">Login to continue to iNoteBook</h2>
+      <div class="col ">
+        <div className="container shadow rounded mt-2 p-3 bg bg-light">
+          <h2 className="mb-3">Login to continue to iNoteBook</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
@@ -86,13 +86,6 @@ const Login = (props) => {
             </button>
           </form>
 
-          <div className="container mt-4 center">
-            <form className="d-flex ">
-              <Link className="btn btn-primary mx-1" role="button" to="/signup">
-                Create New Account
-              </Link>
-            </form>
-          </div>
         </div>
       </div>
 

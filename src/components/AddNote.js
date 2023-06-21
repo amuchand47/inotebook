@@ -21,8 +21,8 @@ export const AddNote = (props) => {
   };
 
   return (
-    <div className="container my-3">
-      <h2>Add a note</h2>
+    <div className="container shadow my-3 p-3 form-signup">
+      <h2 className="text-center">Add a note</h2>
       <div className="container my-3">
         <form>
           

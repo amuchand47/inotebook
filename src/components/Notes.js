@@ -160,7 +160,7 @@ const Notes = (props) => {
         </div>
       </div>
 
-      <div className="row my-3">
+      <div className="row my-3 p-3 shadow">
         <h2>Your Notes</h2>
         <div className="container mx-4">
           {notes.length === 0 && "No notes to display"}

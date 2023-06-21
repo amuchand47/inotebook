@@ -15,3 +15,8 @@ code {
 i{
   cursor: pointer;
 }
+
+
+.form-signup {
+  max-width: 50% !important;/*Set your own width %; */
+}
